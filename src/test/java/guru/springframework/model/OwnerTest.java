@@ -2,6 +2,8 @@ package guru.springframework.model;
 
 import org.junit.jupiter.api.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OwnerTest {
@@ -19,6 +21,8 @@ class OwnerTest {
                 () -> assertAll("Owner Properties",
                         () -> assertEquals("Hyderabad", owner.getCity()),
                         () -> assertEquals("9876543210", owner.getTelephone())));
+
+        assertThat(owner.getCity(), is("Hyderabad"));
     }
 
 }
