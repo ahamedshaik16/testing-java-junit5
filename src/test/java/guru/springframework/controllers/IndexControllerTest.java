@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class IndexControllerTest {
 
@@ -48,5 +49,15 @@ class IndexControllerTest {
             Thread.sleep(2000);
             System.out.println("In TimeOutPreemptively...");
         });
+    }
+
+    @Test
+    void testAssumptionTrue() {
+        assumeTrue("SOHAIL".equalsIgnoreCase(System.getenv("SOHAIL_RUNTIME")));
+    }
+
+    @Test
+    void testAssumptionTureAssumptionIsTrue() {
+        assumeTrue("SOHAIL".equalsIgnoreCase("SOHAIL"));
     }
 }
