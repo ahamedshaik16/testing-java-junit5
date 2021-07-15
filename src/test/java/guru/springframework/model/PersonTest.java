@@ -1,12 +1,13 @@
 package guru.springframework.model;
 
+import guru.springframework.ModelTests;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("model")
-class PersonTest {
+
+class PersonTest implements ModelTests {
 
     @Test
     void groupedAssertions() {

@@ -1,5 +1,6 @@
 package guru.springframework.controllers;
 
+import guru.springframework.ControllerTests;
 import guru.springframework.fauxspring.Model;
 import guru.springframework.model.Vet;
 import guru.springframework.services.SpecialtyService;
@@ -16,8 +17,8 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("controllers")
-class VetControllerTest {
+
+class VetControllerTest implements ControllerTests {
 
     VetService vetService;
     SpecialtyService specialtyService;
