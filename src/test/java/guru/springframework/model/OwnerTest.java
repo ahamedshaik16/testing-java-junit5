@@ -1,5 +1,6 @@
 package guru.springframework.model;
 
+import guru.springframework.CustomArgsProvider;
 import guru.springframework.ModelTests;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -79,5 +80,12 @@ class OwnerTest implements ModelTests {
                 Arguments.of("OH", 3, 4),
                 Arguments.of("MI", 2, 6)
         );
+    }
+
+    @DisplayName("Custom Provider Test")
+    @ParameterizedTest(name = "{displayName} - [{index}] {argumentsWithNames}")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void fromCustomProviderTest(String stateName, int val1, int val2) {
+        System.out.println(stateName + " = " + val1 + ":" + val2);
     }
 }
